@@ -1,0 +1,15 @@
+# Nombre
+name: Deploy to Server
+
+# evento
+on: push
+
+# jobs
+jobs:
+  first_jobs:
+    # definimos el runner
+    runs-on: ubuntu-latest
+    # pasos
+    steps:
+      - name: Hola Mundo
+        run: echo "Hola mundo"
