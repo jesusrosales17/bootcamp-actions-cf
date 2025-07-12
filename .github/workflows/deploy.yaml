@@ -16,7 +16,7 @@ jobs:
     # pasos
     steps:
       - name: Hola Mundo
-        run: echo "Hola mundo $CodigoFacilito"
+        run: echo "Hola mundo $NAME"
 
   second_job:
     # condición para ejecutar el job
