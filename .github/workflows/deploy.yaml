@@ -15,8 +15,14 @@ jobs:
 
     # pasos
     steps:
-      - name: Hola Mundo
-        run: echo "Hola mundo $NAME"
+      - name: Working dir
+        run: ls -al
+
+      - name: Action
+        uses: actions/checkout@v4
+
+      - name: After action
+        run: ls -al
 
   second_job:
     # condición para ejecutar el job
