@@ -9,10 +9,14 @@ jobs:
   first_job:
     # definimos el runner
     runs-on: ubuntu-latest
+    #Variables de entorno
+    env:
+      NAME: CodigoFacilito
+
     # pasos
     steps:
       - name: Hola Mundo
-        run: echo "Hola mundo"
+        run: echo "Hola mundo $CodigoFacilito"
 
   second_job:
     # condición para ejecutar el job
