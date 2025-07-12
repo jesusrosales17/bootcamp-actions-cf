@@ -16,7 +16,7 @@ jobs:
 
   second_job:
     # condición para ejecutar el job
-    if: false
+    if: ${{ github.ref == 'refs/heads/main' }}
     # needs indica que este job depende del primero (first_job)
     needs: first_job
     runs-on: ubuntu-latest
