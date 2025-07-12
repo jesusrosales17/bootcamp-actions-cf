@@ -12,7 +12,7 @@ jobs:
     # pasos
     steps:
       - name: Hola Mundo
-        run: echo "Hola mundo"
+        run: cat hola.php
 
   secod_job:
     # needs indica que este job depende del primero (first_job)
