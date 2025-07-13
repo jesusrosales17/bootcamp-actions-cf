@@ -9,6 +9,10 @@ jobs:
   first_job:
     # definimos el runner
     runs-on: ubuntu-latest
+
+    #salidas 
+    outputs:
+      salida: ${{ steps.step_1.outputs.Mi_variable }}
     #Variables de entorno
     env:
       NAME: CodigoFacilito
@@ -16,11 +20,11 @@ jobs:
     # pasos
     steps:
       - name: Working dir
-        id: step_id
+        id: step_1
         run: echo "Mi_variable=Hola mundo" >> $GITHUB_OUTPUT
 
       - name: Optener mensaje
-        run: echo "${{ steps.step_id.outputs.Mi_variable }}"
+        run: echo "${{ steps.step_1.outputs.Mi_variable }}"
 
   second_job:
       # condición para ejecutar el job
@@ -28,6 +32,9 @@ jobs:
       # needs indica que este job depende del primero (first_job)
     needs: first_job
     runs-on: ubuntu-latest
+
+    env:
+      SALIDA: ${{ needs.first_job.outputs.salida }}
 
     steps:
       - name: Hola mundo
