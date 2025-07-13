@@ -16,15 +16,13 @@ jobs:
     # pasos
     steps:
       - name: Working dir
-        run: echo $GITHUB_OUTPUT
+        id: step_id
+        run: echo "Mi_variable=Hola mundo" >> $GITHUB_OUTPUT
 
-      - name: Action
-        uses: actions/checkout@v4
+      - name: Optener mensaje
+        run: echo "${{ steps.step_id.outputs.Mi_variable }}"
 
-      - name: After action
-        run: ls -al
-
-  second_job:
+    second_job:
     # condición para ejecutar el job
     if: ${{ github.ref == 'refs/heads/main' }}
     # needs indica que este job depende del primero (first_job)
