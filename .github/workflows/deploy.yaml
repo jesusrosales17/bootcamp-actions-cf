@@ -20,7 +20,7 @@ jobs:
     # pasos
     steps:
       - name: generar archivo
-        run |
+        run: |
           echo "Archivo prueba, hola" >> test.log
 
       - name: subir artefacto
