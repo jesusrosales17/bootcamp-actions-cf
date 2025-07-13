@@ -22,10 +22,10 @@ jobs:
       - name: Optener mensaje
         run: echo "${{ steps.step_id.outputs.Mi_variable }}"
 
-    second_job:
-    # condición para ejecutar el job
+  second_job:
+      # condición para ejecutar el job
     if: ${{ github.ref == 'refs/heads/main' }}
-    # needs indica que este job depende del primero (first_job)
+      # needs indica que este job depende del primero (first_job)
     needs: first_job
     runs-on: ubuntu-latest
 
