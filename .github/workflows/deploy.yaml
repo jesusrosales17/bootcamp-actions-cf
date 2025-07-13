@@ -24,7 +24,7 @@ jobs:
           echo "Archivo prueba, hola" >> test.log
 
       - name: subir artefacto
-        uses: action/upload-artifact@v4
+        uses: actions/upload-artifact@v2
         # parametros
         with:
           name: archivo-test
